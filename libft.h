@@ -6,7 +6,7 @@
 /*   By: event <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/15 12:31:33 by event             #+#    #+#             */
-/*   Updated: 2019/05/20 10:48:42 by event            ###   ########.fr       */
+/*   Updated: 2019/05/20 13:32:41 by event            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,24 +28,24 @@ typedef struct		s_list
 void				*ft_memset(void *s, int n, size_t i);
 void				ft_bzero(void *s, size_t n);
 void				*ft_memcpy(void *s1, const void *s2, size_t n);
-				//ft_memccpy();
+void				*ft_memccpy(void *s1, const void *s2, int c, size_t n);
 void				*ft_memmove(void *s1, const void *s2, size_t n);
 void				*ft_memchr(const void *s, int n, size_t i);
 int					ft_memcmp(const void *s1, const void *s2, size_t n);
-				//ft_strdup();
+char				*ft_strdup(const char *s);
 size_t				ft_strlen(const char *s);
 char				*ft_strcpy(char *s1, const char *s2);
 char				*ft_strncpy(char *s1, const char *s2, size_t n);
 char				*ft_strcat(char *s1, const char *s2);
 char				*ft_strncat(char *s1, const char *s2, size_t n);
-				//ft_strlcat();
+size_t				ft_strlcat(char *s1, const char *s2, size_t n);
 char				*ft_strchr(const char *s, int n);
 char				*ft_strrchr(const char *s, int n);
 char				*ft_strstr(const char *s1, const char *s2);
-				//ft_strnstr();
+char				*ft_strnstr(const char *haystack, const char *needle, size_t n);
 int					ft_strcmp(const char *s1, const char *s2);
 int					ft_strncmp(const char *s1, const char *s2, size_t n);
-				//ft_atoi();
+int					ft_atoi(const char *s);
 int					ft_isalpha(int n);
 int					ft_isdigit(int n);
 int					ft_isalnum(int n);
