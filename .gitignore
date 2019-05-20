@@ -1,0 +1,4 @@
+./*.o
+./testrun.c
+./testrun
+./._*
