@@ -1,6 +1,6 @@
-./*.o
-./*.a
-./testrun.c
-./testrun
-./._*
-./*.swp
+*.o
+*.a
+testrun.c
+testrun
+._*
+*.swp
