@@ -1,4 +1,6 @@
 ./*.o
+./*.a
 ./testrun.c
 ./testrun
 ./._*
+./*.swp

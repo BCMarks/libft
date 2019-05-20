@@ -6,7 +6,7 @@
 /*   By: event <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/15 12:31:33 by event             #+#    #+#             */
-/*   Updated: 2019/05/15 15:57:36 by event            ###   ########.fr       */
+/*   Updated: 2019/05/20 10:48:42 by event            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ typedef struct		s_list
 }					t_list;
 
 void				*ft_memset(void *s, int n, size_t i);
-				//ft_bzero();
+void				ft_bzero(void *s, size_t n);
 void				*ft_memcpy(void *s1, const void *s2, size_t n);
 				//ft_memccpy();
 void				*ft_memmove(void *s1, const void *s2, size_t n);
