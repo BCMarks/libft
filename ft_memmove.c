@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memmove.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: event <marvin@42.fr>                       +#+  +:+       +#+        */
+/*   By: bmarks <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/05/20 14:52:38 by event             #+#    #+#             */
-/*   Updated: 2019/05/20 15:49:44 by event            ###   ########.fr       */
+/*   Created: 2019/05/20 14:52:38 by bmarks            #+#    #+#             */
+/*   Updated: 2019/05/21 11:22:07 by bmarks           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ void	*ft_memmove(void *s1, const void *s2, size_t n)
 	i = 0;
 	dst = s1;
 	src = (char *)s2;
-	tmp = (char *)malloc(sizeof(char) * ft_strlen(src));
+	tmp = (char *)malloc(sizeof(char) * ft_strlen(src) + 1);
 	while (i < n)
 	{
 		*(tmp + i) = *(src + i);
@@ -32,8 +32,8 @@ void	*ft_memmove(void *s1, const void *s2, size_t n)
 	while (i < n)
 	{
 		*(dst + i) = *(tmp + i);
-		free(tmp + i);
 		i++;
 	}
+	free(tmp);
 	return (s1);
 }

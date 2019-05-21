@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_iscntrl.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: event <marvin@42.fr>                       +#+  +:+       +#+        */
+/*   By: bmarks <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/05/15 15:06:09 by event             #+#    #+#             */
-/*   Updated: 2019/05/17 15:37:00 by event            ###   ########.fr       */
+/*   Created: 2019/05/15 15:06:09 by bmarks            #+#    #+#             */
+/*   Updated: 2019/05/21 10:44:44 by bmarks           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int ft_iscntrl(int n)
+int	ft_iscntrl(int n)
 {
 	if (ft_isprint(n) || !ft_isascii(n))
 		return (0);
