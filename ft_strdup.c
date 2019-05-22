@@ -6,7 +6,7 @@
 /*   By: bmarks <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/22 11:09:26 by bmarks            #+#    #+#             */
-/*   Updated: 2019/05/22 11:37:56 by bmarks           ###   ########.fr       */
+/*   Updated: 2019/05/22 14:40:09 by bmarks           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,10 +20,7 @@ char	*ft_strdup(const char *s)
 	i = 0;
 	ns = (char *)malloc(ft_strlen(s) + 1);
 	if (!ns)
-	{
-		printf("ah sjit fam malloc failed");
 		return (NULL);
-	}
 	while (*(s + i))
 	{
 		*(ns + i) = *(s + i);
