@@ -6,7 +6,7 @@
 /*   By: event <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/15 12:31:33 by event             #+#    #+#             */
-/*   Updated: 2019/05/21 10:57:10 by bmarks           ###   ########.fr       */
+/*   Updated: 2019/05/22 09:53:29 by bmarks           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ size_t				ft_strlcat(char *s1, const char *s2, size_t n);
 char				*ft_strchr(const char *s, int n);
 char				*ft_strrchr(const char *s, int n);
 char				*ft_strstr(const char *s1, const char *s2);
-char				*ft_strnstr(const char *hay, const char *needle, size_t n);
+char				*ft_strnstr(const char *s1, const char *s2, size_t n);
 int					ft_strcmp(const char *s1, const char *s2);
 int					ft_strncmp(const char *s1, const char *s2, size_t n);
 int					ft_atoi(const char *s);

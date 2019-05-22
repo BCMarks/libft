@@ -6,7 +6,7 @@
 #    By: event <marvin@42.fr>                       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/05/15 12:21:26 by event             #+#    #+#              #
-#    Updated: 2019/05/20 10:30:28 by event            ###   ########.fr        #
+#    Updated: 2019/05/22 11:40:56 by bmarks           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -101,3 +101,10 @@ fclean:	clean
 	@/bin/rm -f $(NAME)
 
 re:	fclean all
+
+test: re
+	@gcc -Wall -Werror -Wextra testrun.c -L. -lft -o testrun
+	@./testrun
+
+norm:
+	@norminette -R CheckForbiddenSourceHeader
