@@ -6,7 +6,7 @@
 /*   By: bmarks <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/17 14:01:36 by bmarks            #+#    #+#             */
-/*   Updated: 2019/05/21 11:04:04 by bmarks           ###   ########.fr       */
+/*   Updated: 2019/05/22 16:02:42 by bmarks           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,25 @@
 
 char	*ft_strncpy(char *s1, const char *s2, size_t n)
 {
-	while (s2 && *s2 && n > 0)
+	int		i;
+	size_t	len;
+
+	len = n;
+	i = 0;
+	while (*(s2 + i) && n > 0)
 	{
-		*s1 = *s2;
-		s1++;
-		s2++;
+		*(s1 + i) = *(s2 + i);
 		n--;
+		i++;
+	}
+	if (ft_strlen(s2) < len)
+	{
+		while (*(s1 + i) && n > 0)
+		{
+			*(s1 + i) = '\0';
+			i++;
+			n--;
+		}
 	}
 	return (s1);
 }

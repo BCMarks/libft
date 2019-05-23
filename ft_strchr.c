@@ -6,7 +6,7 @@
 /*   By: bmarks <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/21 12:43:11 by bmarks            #+#    #+#             */
-/*   Updated: 2019/05/21 13:42:51 by bmarks           ###   ########.fr       */
+/*   Updated: 2019/05/23 09:55:49 by bmarks           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ char	*ft_strchr(const char *s, int n)
 			return ((char *)(s + i));
 		i++;
 	}
-	if (n == '\n')
+	if (n == '\0')
 		return ((char *)(s + i));
 	return (NULL);
 }
