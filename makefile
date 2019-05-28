@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: event <marvin@42.fr>                       +#+  +:+       +#+         #
+#    By: bmarks <marvin@42.fr>                      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2019/05/15 12:21:26 by event             #+#    #+#              #
-#    Updated: 2019/05/22 11:40:56 by bmarks           ###   ########.fr        #
+#    Created: 2019/05/15 12:21:26 by bmarks            #+#    #+#              #
+#    Updated: 2019/05/28 15:13:55 by bmarks           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -82,7 +82,7 @@ SRC = ft_memset.c \
 	  ft_strspn.c \
 	  ft_strpbrk.c \
 	  ft_strtok.c \
-	  ft_strerror.c
+	  ft_strtok_r.c
 	 
 	 OBJ = $(SRC:%.c=%.o)
 
@@ -103,8 +103,11 @@ fclean:	clean
 re:	fclean all
 
 test: re
-	@gcc -Wall -Werror -Wextra testrun.c -L. -lft -o testrun
+	@gcc $(FLAGS) testrun.c -L. -lft -o testrun
 	@./testrun
 
+test2: re
+	@gcc $(FLAGS) kaktest.c -L. -lft -o kak
+	@./kak
 norm:
 	@norminette -R CheckForbiddenSourceHeader
