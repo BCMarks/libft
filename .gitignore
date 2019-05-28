@@ -1,3 +1,5 @@
+*.c
+!ft_*
 *.o
 *.a
 testrun.c
