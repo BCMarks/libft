@@ -6,7 +6,7 @@
 /*   By: bmarks <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/15 12:31:33 by bmarks            #+#    #+#             */
-/*   Updated: 2019/05/28 09:49:51 by bmarks           ###   ########.fr       */
+/*   Updated: 2019/05/28 15:13:08 by bmarks           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -95,6 +95,6 @@ size_t				ft_strcspn(const char *s1, const char *s2);
 size_t				ft_strspn(const char *s1, const char *s2);
 char				*ft_strpbrk(const char *s1, const char *s2);
 char				*ft_strtok(char *s1, const char *s2);
-char				*ft_strerror(int errornum);
+char				*ft_strtok_r(char *s1, const char *s2, char **lasts);
 
 #endif
