@@ -6,7 +6,7 @@
 /*   By: bmarks <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/28 14:11:59 by bmarks            #+#    #+#             */
-/*   Updated: 2019/05/28 14:24:53 by bmarks           ###   ########.fr       */
+/*   Updated: 2019/06/03 15:17:08 by bmarks           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,29 +14,29 @@
 
 size_t	ft_strcspn(const char *s1, const char *s2)
 {
-	size_t	i;
-	size_t	j;
+	size_t	i[2];
 	int		brk;
 
-	i = 0;
-	j = 0;
+	i[0] = 0;
+	i[1] = 0;
 	brk = 0;
-	while (*(s1 + i))
+	while (*(s1 + i[0]))
 	{
-		while (*(s2 + j))
+		while (*(s2 + i[1]))
 		{
-			if (*(s1 + i) != *(s2 + j))
+			if (*(s1 + i[0]) != *(s2 + i[1]))
 				brk = 1;
-			j++;
+			i[1]++;
 		}
 		if (brk)
 			break ;
-		i++;
+		i[1] = 0;
+		i[0]++;
 	}
 	if (!brk)
 		return (ft_strlen(s1));
-	i = 0;
-	while (ft_strchr(s2, *(s1 + i)) == NULL && *(s1 + i))
-		i++;
-	return (i);
+	i[0] = 0;
+	while (ft_strchr(s2, *(s1 + i[0])) == NULL && *(s1 + i[0]))
+		i[0]++;
+	return (i[0]);
 }
