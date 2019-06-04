@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: bmarks <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/05/24 16:22:55 by bmarks            #+#    #+#             */
-/*   Updated: 2019/06/03 15:41:56 by bmarks           ###   ########.fr       */
+/*   Created: 2019/06/04 15:52:38 by bmarks            #+#    #+#             */
+/*   Updated: 2019/06/04 17:21:06 by bmarks           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,17 +17,17 @@ static int	ft_strc(char const *s, char c)
 	int		i;
 	int		count;
 
-	i = (int)ft_strspn(s, &c);
+	i = 0;
 	count = 0;
+	while (*(s + i) == c && *(s + i))
+		i++;
 	while (*(s + i))
 	{
-		if (*(s + i) != c && *(s + i))
-		{
-			count++;
-			i += (int)ft_strcspn(s + i, &c);
-		}
-		else
-			i += (int)ft_strspn(s + i, &c);
+		count++;
+		while (*(s + i) != c && *(s + i))
+			i++;
+		while (*(s + i) == c && *(s + i))
+			i++;
 	}
 	return (count);
 }
@@ -35,27 +35,28 @@ static int	ft_strc(char const *s, char c)
 char		**ft_strsplit(char const *s, char c)
 {
 	char	**fresh;
-	int		i[3];
+	int		i[2];
+	int		k;
 
 	if (!s || !(fresh = (char **)malloc(sizeof(char *) * (ft_strc(s, c) + 1))))
 		return (NULL);
 	i[0] = 0;
 	i[1] = 0;
-	i[2] = 0;
-	while (*(s + i[0]) != '\0')
+	k = 0;
+	while (*(s + i[0]) && ft_strc(s, c))
 	{
-		i[0] += ft_strspn(s + i[0], &c);
-		if (*(s + i[0]) != c && *(s + i[0]))
-		{
-			if (!(fresh[i[1]] = (char *)malloc(ft_strcspn(s + i[0], &c) + 1)))
-				return (NULL);
-			while (*(s + i[0]) != c && *(s + i[0]) != '\0')
-				fresh[i[1]][i[2]++] = (char)*(s + i[0]++);
-			fresh[i[1]][i[2]] = '\0';
-			i[2] = 0;
+		i[1] = 0;
+		while (*(s + i[0]) == c && *(s + i[0]))
+			i[0]++;
+		while (*(s + i[0] + i[1]) != c && *(s + i[0] + i[1]))
 			i[1]++;
-		}
+		if (!(fresh[k] = ft_strsub(s, (unsigned int)i[0], (size_t)i[1])))
+			return (NULL);
+		k++;
+		if (k == ft_strc(s, c))
+			break ;
+		i[0] += i[1];
 	}
-	fresh[i[1]] = NULL;
+	fresh[k] = NULL;
 	return (fresh);
 }
