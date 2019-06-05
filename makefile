@@ -6,7 +6,7 @@
 #    By: bmarks <marvin@42.fr>                      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/05/15 12:21:26 by bmarks            #+#    #+#              #
-#    Updated: 2019/06/03 09:18:37 by bmarks           ###   ########.fr        #
+#    Updated: 2019/06/05 12:49:37 by bmarks           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -107,8 +107,5 @@ test: re
 	@gcc $(FLAGS) testrun.c -L. -lft -o testrun
 	@./testrun
 
-test2: re
-	@gcc $(FLAGS) kaktest.c -L. -lft -o kak
-	@./kak
 norm:
 	@norminette -R CheckForbiddenSourceHeader
