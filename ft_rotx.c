@@ -6,13 +6,13 @@
 /*   By: bmarks <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/30 12:55:15 by bmarks            #+#    #+#             */
-/*   Updated: 2019/05/30 13:28:41 by iisaacs          ###   ########.fr       */
+/*   Updated: 2019/06/06 15:02:55 by bmarks           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	rotup(char *s, int x)
+static char	rotup(char *s, int x)
 {
 	char	hol;
 
@@ -25,7 +25,7 @@ char	rotup(char *s, int x)
 	return (hol);
 }
 
-char	rotlow(char *s, int x)
+static char	rotlow(char *s, int x)
 {
 	char	hol;
 
@@ -38,7 +38,7 @@ char	rotlow(char *s, int x)
 	return (hol);
 }
 
-void	ft_rotx(char *s, int x)
+void		ft_rotx(char *s, int x)
 {
 	char	hol;
 
