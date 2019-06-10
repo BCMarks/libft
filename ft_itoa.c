@@ -6,7 +6,7 @@
 /*   By: bmarks <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/22 13:44:18 by bmarks            #+#    #+#             */
-/*   Updated: 2019/05/27 15:23:35 by bmarks           ###   ########.fr       */
+/*   Updated: 2019/06/07 14:58:23 by bmarks           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,9 +59,8 @@ char		*ft_itoa(int n)
 		num /= 10;
 		len++;
 	}
-	str = (char *)malloc(sizeof(str) * len + 1);
-	str_number(str, n, len + 1);
-	if (!str)
+	if (!(str = (char *)malloc(sizeof(char) * len + 1)))
 		return (NULL);
+	str_number(str, n, len + 1);
 	return (str);
 }

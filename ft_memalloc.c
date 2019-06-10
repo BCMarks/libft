@@ -6,7 +6,7 @@
 /*   By: bmarks <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/24 09:17:42 by bmarks            #+#    #+#             */
-/*   Updated: 2019/05/24 09:24:12 by bmarks           ###   ########.fr       */
+/*   Updated: 2019/06/07 14:23:05 by bmarks           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,7 @@ void	*ft_memalloc(size_t size)
 	char	*ptmem;
 
 	i = -1;
-	mem = (void *)malloc(sizeof(void) * size);
-	if (!mem)
+	if (!(mem = (void *)malloc(sizeof(void) * size)))
 		return (NULL);
 	ptmem = mem;
 	while (++i < size)

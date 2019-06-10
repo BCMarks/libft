@@ -6,7 +6,7 @@
 /*   By: bmarks <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/24 15:10:24 by bmarks            #+#    #+#             */
-/*   Updated: 2019/05/24 16:11:39 by bmarks           ###   ########.fr       */
+/*   Updated: 2019/06/07 16:16:17 by bmarks           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,24 +17,26 @@ char	*ft_strtrim(char const *s)
 	char	*fresh;
 	int		i;
 	int		len;
-	int		start;
-	int		end;
+	int		p[2];
 
-	i = 0;
-	len = (int)ft_strlen(s);
-	start = 0;
-	end = 0;
-	while (*(s + start) == ' ' || *(s + start) == '\n' || *(s + start) == '\t')
-		start++;
-	while ((*(s + len - end - 1) == ' ' || *(s + len - end - 1) == '\n'
-			|| *(s + len - end - 1) == '\t') && len - end - 1 > start)
-		end++;
-	end = (int)ft_strlen(s) - end;
-	fresh = (char *)malloc(sizeof(char) * (end - start));
-	while (*(s + start) && start < end)
-		*(fresh + i++) = *(s + start++);
-	*(fresh + i) = '\0';
-	if (!fresh)
-		return (NULL);
-	return (fresh);
+	if (s)
+	{
+		i = 0;
+		len = (int)ft_strlen(s);
+		p[0] = 0;
+		p[1] = 0;
+		while (*(s + p[0]) == 32 || *(s + p[0]) == 10 || *(s + p[0]) == 9)
+			p[0]++;
+		while ((*(s + len - p[1] - 1) == 32 || *(s + len - p[1] - 1) == 10
+				|| *(s + len - p[1] - 1) == 9) && len - p[1] - 1 > p[0])
+			p[1]++;
+		p[1] = len - p[1];
+		if (!(fresh = (char *)malloc(sizeof(char) * (p[1] - p[0] + 1))))
+			return (NULL);
+		while (*(s + p[0]) && p[0] < p[1])
+			*(fresh + i++) = *(s + p[0]++);
+		*(fresh + i) = '\0';
+		return (fresh);
+	}
+	return (NULL);
 }
