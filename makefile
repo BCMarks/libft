@@ -6,7 +6,7 @@
 #    By: bmarks <marvin@42.fr>                      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/05/15 12:21:26 by bmarks            #+#    #+#              #
-#    Updated: 2019/06/05 12:49:37 by bmarks           ###   ########.fr        #
+#    Updated: 2019/06/12 14:18:58 by bmarks           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -83,7 +83,8 @@ SRC = ft_memset.c \
 	  ft_strpbrk.c \
 	  ft_strtok.c \
 	  ft_strtok_r.c \
-	  ft_rotx.c
+	  ft_rotx.c \
+	  ft_lstadd_end.c
 	 
 	 OBJ = $(SRC:%.c=%.o)
 
